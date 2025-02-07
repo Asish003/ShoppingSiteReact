@@ -1,0 +1,137 @@
+.PopularDishes {
+    flex: 30.7%;
+    max-width: 1000px;
+    width: 100%;
+    margin: auto;
+  }
+  
+  .PopularDishesHeading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .PopularItems {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 30px;
+    gap:20px
+  }
+
+  .PopularItemsCard{
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      border-radius: 10px;
+      border: none;
+      width: 300px;
+      height: 300px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      cursor: pointer;
+      font-size: 14px;
+      text-align: center;
+  }
+  
+  .PopularItemsCardTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-right: 5px;
+    color: white;
+    font-size: 15px;
+  }
+  
+  .Heart {
+      font-size: 20px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .glow {
+    /* color: #FF6347; */
+    color: green;
+    border-radius: 100px;
+    box-shadow: 0 0 20px rgba(255, 99, 71, 0.8); 
+    transform: scale(1.2);
+  } 
+
+  .DiscountBadge{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4caf50;
+    width : 100px;
+    height : 20px;
+    border-radius: 0px 5px 5px 0px;
+  }
+
+  .PopularItemNamePrice{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 20px;
+  }
+
+  .PopularItemName{
+    font-size: 15px;
+  } 
+
+  .PopularItemPrice{
+    font-size: 20px;
+  }
+
+  .PopularItemPrice span{
+    color: #ffd700;
+    font-weight: bolder;
+  }
+
+  .StarRating {
+    display: flex;
+    /* cursor: pointer; */
+    padding-left: 20px;
+  }
+  
+  .Star {
+    font-size: 20px;
+    color: #ccc;
+    transition: color 0.3s;
+  }
+  
+  .Star:hover,
+  .Star.hover {
+    color: #ffd700;
+  }
+  
+  .Star.selected {
+    color: #ffd700;
+  }
+  
+  .buttonIcon {
+    height: 100%;
+  }
+  
+  .PopularItemsCardBottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .AddItemButton {
+    padding: 1px 8px 1px 8px;
+    font-size: 30px;
+    background-color: #4caf50; /* Green background */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+  }
+  

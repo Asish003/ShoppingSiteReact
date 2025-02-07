@@ -1,0 +1,56 @@
+.Category {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+
+.CategoryHeading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.ViewAll {
+    color: #f5a623;
+    cursor: pointer;
+}
+
+.Categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.CategoryButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    width: 120px;
+    height: 120px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* .CategoryButtons:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+} */
+
+.buttonIcon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 8px;
+}

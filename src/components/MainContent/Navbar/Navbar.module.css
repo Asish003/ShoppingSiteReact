@@ -1,0 +1,37 @@
+.Navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex:7.7%;
+}
+
+.Username{
+    margin-left: 50px;
+}
+
+.searchContainer {
+    display: flex;
+    align-items: center;
+    background: #f5f5f5; 
+    padding: 10px;
+    border-radius: 10px;
+    width: 280px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    margin-right: 50px;
+}
+
+.searchIcon {
+    height: 18px;  
+    width: 18px;
+    margin-right: 10px;
+}
+
+.searchInput {
+    flex: 1; 
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    background: transparent;
+}

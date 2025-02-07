@@ -1,0 +1,9 @@
+.MainContentFeatures{
+    padding-top: 20px;
+    display: flex;
+    flex: 62.5%;
+    background-color: rgba(224, 224, 224, 0.904);
+    flex-direction: column;
+    gap: 20px;
+}
+

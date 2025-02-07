@@ -1,0 +1,14 @@
+/* Reset margins, padding, and set border-box */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.homescreen_layout{
+    display: flex;
+    height: auto;
+    margin-left: 40px;
+    margin-right: 40px;
+    border-radius: 5%;
+}
