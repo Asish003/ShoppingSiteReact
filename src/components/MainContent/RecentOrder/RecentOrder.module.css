@@ -1,59 +1,3 @@
-/* .RecentOrder{
-    flex: 30.7%;
-    max-width: 1000px;
-    width: 100%;
-    margin: auto;
-    padding-bottom: 20px;
-}
-
-.RecentDishesHeading{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.RecentOrdersCard{
-    border-radius: 20px;
-}
-.RecentOrdersButton{
-    border: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.RecentItems{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.RecentOrdersItem{
-    display: flex;
-    background-color: white;
-}
-
-.RecentItemNamePrice{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    background-color: white;
-    width: 100%;
-    line-height: 20px;
-    padding-bottom: 20px;
-}
-
-.RecentItemPrice span{
-    color: #ffd700;
-    font-weight: bolder;
-} */
-
-
-
-
 .RecentOrder {
     flex: 30.7%;
     max-width: 1000px;
@@ -103,6 +47,14 @@
     gap:30px;
 }
 
+.RecentOrdersCard:nth-child(n+4){
+    display: none;
+}
+
+.RecentItems.showAll .RecentOrdersCard{
+    display: block;
+  }
+
 .RecentOrdersItem {
     display: flex;
     align-items: center;
@@ -142,3 +94,8 @@
     font-weight: bolder;
     font-size: 20px;
 }
+
+.Viewall {
+    border: none;
+    background-color: rgba(224, 224, 224, 0.904);
+  }

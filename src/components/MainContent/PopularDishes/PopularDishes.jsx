@@ -8,26 +8,39 @@ const PopularDishes = ({ addToCart }) => {
     const [discount] = useState(15);
     const [price] = useState(5.59);
     const [isGlowing, setIsGlowing] = useState(false);
+    const [showAll, setshowAll] = useState(false);
+
 
     const handleClick = () => {
         setIsGlowing((prevState) => !prevState);
     };
 
+    const handleShowAllClick = () => {
+        setshowAll((prevState) => !prevState)
+    };
+
     const dishes = [
-        { id: 1, name: "Fish Burger", price: 5.59 , image:burger1},
-        { id: 2, name: "Chicken Burger", price: 6.99 , image:burger2},
-        { id: 3, name: "Veggie Burger", price: 4.99 , image:burger3}
+        { id: 1, name: "Fish Burger", price: 5.59, image: burger1 },
+        { id: 2, name: "Chicken Burger", price: 6.99, image: burger2 },
+        { id: 3, name: "Veggie Burger", price: 4.99, image: burger3 },
+        { id: 4, name: "Fish Burger", price: 5.59, image: burger1 },
+        { id: 5, name: "Chicken Burger", price: 6.99, image: burger2 },
+        { id: 6, name: "Veggie Burger", price: 4.99, image: burger3 },
+        { id: 7, name: "Fish Burger", price: 5.59, image: burger1 },
+        { id: 8, name: "Chicken Burger", price: 6.99, image: burger2 },
+        { id: 9, name: "Veggie Burger", price: 4.99, image: burger3 }
     ];
 
     return (
         <div className={styles.PopularDishes}>
             <div className={styles.PopularDishesHeading}>
                 <h2>Popular Dishes</h2>
-                <h5>View All</h5>
+                <button className={styles.Viewall} onClick={handleShowAllClick}>{showAll ? 'Show Less' : 'View All'}</button>
             </div>
-            <div className={styles.PopularItems}>
+            {/* <div className={styles.PopularItems}> --------------->if cards not work <---------------*/}
+            <div className={`${styles.PopularItems} ${showAll ? styles.showAll : ''}`}>
                 {dishes.map((dish) => (
-                    <div key={dish.id} className={styles.PopularItemsCard}>
+                    <div key={dish.id} className={`${styles.PopularItemsCard}`}>
                         <div className={styles.PopularItemsCardTop}>
                             <div className={styles.DiscountBadge}>{discount}% Off</div>
                             <span className={`${styles.Heart} ${isGlowing ? styles.glow : ''}`} onClick={handleClick}>❤️</span>
@@ -46,8 +59,6 @@ const PopularDishes = ({ addToCart }) => {
                                 <div className={styles.PopularItemPrice}><span>$</span>{dish.price}</div>
                             </div>
                             <button className={styles.AddItemButton} onClick={() => {
-                                console.log("Item add button pressed")
-                                console.log("PopularDishes props:", addToCart);
                                 addToCart(dish)
                             }}>+</button>
                         </div>

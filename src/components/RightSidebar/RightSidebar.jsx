@@ -50,17 +50,18 @@ const RightSidebar = ({ cartItems, removeItem }) => {
                 </div>
                 <div className={`${styles.UserAddress}`}>
                     <div>Lorem, ipsum.</div>
-                    <button></button>
+                    <button className={`${styles.AddressChangeButton}`}>Change</button>
                 </div>
                 <div className={`${styles.UserFullAddress}`}>
                     <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus facilis voluptas perferendis incidunt similique tenetur fugit quibusdam dolore itaque earum.</span>
                 </div>
-                <div>
-                    <button>mango</button>
-                    <button>mango</button>
+                <div className={`${styles.BelowAddressButtons}`}>
+                    <button className={`${styles.AddressButtons}`}>Add Details</button>
+                    <button className={`${styles.AddressButtons}`}>Add Note</button>
                 </div>
             </div>
             <CartSection cartItems={cartItems} removeItem={removeItem} />
+            <hr></hr>
         </div>
     );
 };
