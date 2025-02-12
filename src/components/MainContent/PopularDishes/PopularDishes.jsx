@@ -23,12 +23,12 @@ const PopularDishes = ({ addToCart }) => {
         { id: 1, name: "Fish Burger", price: 5.59, image: burger1 },
         { id: 2, name: "Chicken Burger", price: 6.99, image: burger2 },
         { id: 3, name: "Veggie Burger", price: 4.99, image: burger3 },
-        { id: 4, name: "Fish Burger", price: 5.59, image: burger1 },
-        { id: 5, name: "Chicken Burger", price: 6.99, image: burger2 },
-        { id: 6, name: "Veggie Burger", price: 4.99, image: burger3 },
-        { id: 7, name: "Fish Burger", price: 5.59, image: burger1 },
-        { id: 8, name: "Chicken Burger", price: 6.99, image: burger2 },
-        { id: 9, name: "Veggie Burger", price: 4.99, image: burger3 }
+        { id: 4, name: "Fish Burger1", price: 5.59, image: burger1 },
+        { id: 5, name: "Chicken Burger1", price: 6.99, image: burger2 },
+        { id: 6, name: "Veggie Burger1", price: 4.99, image: burger3 },
+        { id: 7, name: "Fish Burger2", price: 5.59, image: burger1 },
+        { id: 8, name: "Chicken Burger2", price: 6.99, image: burger2 },
+        { id: 9, name: "Veggie Burger2", price: 4.99, image: burger3 }
     ];
 
     return (

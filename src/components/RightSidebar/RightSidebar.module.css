@@ -42,16 +42,20 @@ nav{
     display: flex;
     margin-top: 20px;
     justify-content: space-around;
-    background-color: aquamarine;
+    background-color: #f4a100;
     border-radius: 10px;
 }
+
+/* .BackgroundPattern{
+    z-index: -1;
+} */
 
 .BalanceLeftSide{
     flex: 0.5;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    background-color: rgb(255, 196, 0);
+    background-color: rgb(255, 255, 255);
     height: 60%;
     border-radius: 10px;
     padding: 10px 40px 30px 40px;
@@ -64,8 +68,14 @@ nav{
     display: flex;
     align-items: center;
     gap: 5px;
-    padding-left: 10px;
+    padding-left: 30px;
     margin-right: 60px;
+}
+
+.ServiceButtons{
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
 }
 
 .DetailedAddressHead{
@@ -119,12 +129,6 @@ nav{
     border-width: 1px;
 }
 
-hr {
-    margin-top: 20px;
-    height: 1px;
-    background: rgb(179, 178, 178);
-    background: rgb(179, 178, 178);
-    font-size: 0;
-    border: 0;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+.ShoppingCartH2{
+    padding-top: 20px;
 }

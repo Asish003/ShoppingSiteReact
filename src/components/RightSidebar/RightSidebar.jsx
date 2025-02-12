@@ -2,14 +2,15 @@ import { useState } from "react";
 
 import styles from "./RightSidebar.module.css";
 import CartSection from "../RightSidebar/CartSection/CartSection";
+import circle from "../../assets/MainContentIcons/promotion/circle.svg";
 
-import Discussion from "../../assets/Rightsidebaricons/OrderDiscussion.svg"
-import Notification from "../../assets/Rightsidebaricons/notification.svg"
-import Setting from "../../assets/Rightsidebaricons/Setting.svg"
-import Profit from "../../assets/Rightsidebaricons/Profit.svg"
-import Income from "../../assets/Rightsidebaricons/Income.svg"
+import Discussion from "../../assets/Rightsidebaricons/OrderDiscussion.svg";
+import Notification from "../../assets/Rightsidebaricons/notification.svg";
+import Setting from "../../assets/Rightsidebaricons/Setting.svg";
+import Profit from "../../assets/Rightsidebaricons/Profit.svg";
+import Income from "../../assets/Rightsidebaricons/Income.svg";
 
-const RightSidebar = ({ cartItems, removeItem }) => {
+const RightSidebar = ({cartItems, removeItem}) => {
 
 
     const [Balance, setBalance] = useState(100);
@@ -36,6 +37,8 @@ const RightSidebar = ({ cartItems, removeItem }) => {
                 <div className={`${styles.CardBalance}`}>
                     <div className={`${styles.CardBalanceTemplate}`}>
                         <div className={`${styles.BalanceLeftSide}`}>
+                            {/* <img src={circle} alt="Background Pattern" className={`${styles.BackgroundPattern}`} />
+                            <img src={circle} alt="Background Pattern" className={`${styles.BackgroundPattern}`} /> */}
                             <div className={`${styles.UserBalanceText}`}>Balance</div>
                             <div className={`${styles.UserBalance}`}>${Balance}</div>
                         </div>
@@ -60,8 +63,8 @@ const RightSidebar = ({ cartItems, removeItem }) => {
                     <button className={`${styles.AddressButtons}`}>Add Note</button>
                 </div>
             </div>
+            <h2 className={`${styles.ShoppingCartH2}`}>Shopping Cart</h2>
             <CartSection cartItems={cartItems} removeItem={removeItem} />
-            <hr></hr>
         </div>
     );
 };

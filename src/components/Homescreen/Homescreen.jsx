@@ -7,24 +7,44 @@ import { useState } from "react";
 
 
 const Homescreen = () => {
-    const [cartItems, setCartItems] = useState([]);
 
-    const addToCart = (item) => {
-        setCartItems([...cartItems, item]);
-    }; 
+  const [cartItems, setCartItems] = useState({});
+  
+  const addToCart = (dish) => {
+    setCartItems((prevMap) => {
+      const newMap = {...prevMap};
+      if (!newMap[dish.id]) {
+        newMap[dish.id] = { ...dish, quantity: 1 };
+      }
+      else {
+        newMap[dish.id].quantity += 1;
+      }
+      return newMap;
+    });
+  };
 
-    const removeItem = (index) => {
-      setCartItems((prevCart) => prevCart.filter((_, i) => i !== index));
-    };
+  const removeItem = (id) => {
+    setCartItems((prevMap) => {
+      const newMap = {...prevMap};
+      if (newMap[id]) {
+        if (newMap[id].quantity > 1) {
+          newMap[id].quantity -= 1;
+        }
+      } else {
+        delete newMap[id];
+      }
+      return newMap;
+    });
+  };
 
-    return (
-        //main container
-        <div className={`${styles.homescreen_layout}`}>
-          <LeftSidebar/>
-          <Maincontent  addToCart={addToCart}/>
-          <RightSidebar cartItems={cartItems} removeItem={removeItem}/>
-      </div>
-    );
+  return (
+    //main container
+    <div className={`${styles.homescreen_layout}`}>
+      <LeftSidebar />
+      <Maincontent addToCart={addToCart} />
+      <RightSidebar cartItems={cartItems} removeItem={removeItem} />
+    </div>
+  );
 };
 
 export default Homescreen;

@@ -2,25 +2,50 @@ import { useState } from "react";
 import styles from "./CartSection.module.css";
 
 const CartSection = ({ cartItems, removeItem }) => {
+    
+    const [TotalPrice,setTotalPrice] = useState(0);
+    const [TotalQuantity,setTotalQuantity] = useState(0);
+
+    const bill = () =>{
+        setTotalPrice(TotalPrice)
+    }
+
+    const amount = () =>{
+        setTotalQuantity(TotalQuantity)
+    }
+
     return (
         <div className={styles.CartSection}>
-            <h2>Shopping Cart</h2>
-            {cartItems.length === 0 ? (
+            {Object.keys(cartItems).length === 0? (
                 <p className={styles.EmptyCart}>Your cart is empty</p>
             ) : (
                 <ul className={styles.CartList}>
-                    {cartItems.map((item, index) => (
-                        <li key={index} className={styles.CartItem}>
-                            <img src={item.image} alt={item.name} className={styles.CartItemImage} />
+                    {/* {Object.entries(cartItems).forEach((item) => ( */}
+                    {Object.entries(cartItems).map(([id,item]) => (
+                        <li key={id} className={styles.CartItem}>
+                            <div>
+                                <img src={item.image} alt={item.name} className={styles.CartItemImage} />
+                            </div>
                             <div className={styles.CartItemDetails}>
                                 <span className={styles.ItemName}>{item.name}</span>
-                                <span className={styles.ItemPrice}>${item.price}</span>
+                                <div>
+                                <button className={styles.RemoveButton} onClick={() => removeItem(id)}>❌</button>
+                                <span>{item.quantity}</span>
+                                <button className={styles.RemoveButton} onClick={() => removeItem(id)}>❌</button>
+                                </div>
                             </div>
-                            <button className={styles.RemoveButton} onClick={() => removeItem(index)}>❌</button>
+                                <span className={styles.ItemPrice}>${(item.price * item.quantity).toFixed(2)}</span>
                         </li>
                     ))}
                 </ul>
             )}
+            <hr></hr>
+            {TotalPrice !== 0 ?
+                <div className={`${styles.CartTotal}`}>
+                    <span>Total</span>
+                    <span>${TotalPrice}</span>
+                </div> : null
+                }
         </div>
     );
 };
