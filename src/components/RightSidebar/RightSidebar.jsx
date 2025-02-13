@@ -10,7 +10,7 @@ import Setting from "../../assets/Rightsidebaricons/Setting.svg";
 import Profit from "../../assets/Rightsidebaricons/Profit.svg";
 import Income from "../../assets/Rightsidebaricons/Income.svg";
 
-const RightSidebar = ({cartItems, removeItem}) => {
+const RightSidebar = ({cartItems, removeItem , addToCart}) => {
 
 
     const [Balance, setBalance] = useState(100);
@@ -64,7 +64,7 @@ const RightSidebar = ({cartItems, removeItem}) => {
                 </div>
             </div>
             <h2 className={`${styles.ShoppingCartH2}`}>Shopping Cart</h2>
-            <CartSection cartItems={cartItems} removeItem={removeItem} />
+            <CartSection cartItems={cartItems} removeItem={removeItem} addToCart={addToCart} />
         </div>
     );
 };

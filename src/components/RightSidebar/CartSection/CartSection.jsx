@@ -1,19 +1,22 @@
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import styles from "./CartSection.module.css";
+import coupon from "../../../assets/Rightsidebaricons/Vector.svg"
 
-const CartSection = ({ cartItems, removeItem }) => {
-    
+const CartSection = ({ cartItems, removeItem , addToCart }) => {
+
     const [TotalPrice,setTotalPrice] = useState(0);
-    const [TotalQuantity,setTotalQuantity] = useState(0);
 
-    const bill = () =>{
+    useEffect(() =>{
+        let TotalPrice = 0;
+
+        Object.values(cartItems).forEach((item) => {
+            TotalPrice += item.price * item.quantity
+        });
+
+        // setTotalPrice(TotalPrice.toFixed(2));
         setTotalPrice(TotalPrice)
-    }
-
-    const amount = () =>{
-        setTotalQuantity(TotalQuantity)
-    }
-
+    },[cartItems]);
+    
     return (
         <div className={styles.CartSection}>
             {Object.keys(cartItems).length === 0? (
@@ -28,24 +31,43 @@ const CartSection = ({ cartItems, removeItem }) => {
                             </div>
                             <div className={styles.CartItemDetails}>
                                 <span className={styles.ItemName}>{item.name}</span>
-                                <div>
-                                <button className={styles.RemoveButton} onClick={() => removeItem(id)}>❌</button>
+                                <div className={styles.CartItemsQuantity}>
+                                <button className={styles.RemoveButton} onClick={() => removeItem(id)}>-</button>
                                 <span>{item.quantity}</span>
-                                <button className={styles.RemoveButton} onClick={() => removeItem(id)}>❌</button>
+                                <button className={styles.AddButton} onClick={() => addToCart(item)}>+</button>
                                 </div>
                             </div>
-                                <span className={styles.ItemPrice}>${(item.price * item.quantity).toFixed(2)}</span>
+                                <span className={styles.ItemPrice}>+<span>$</span>{(item.price * item.quantity).toFixed(2)}</span>
                         </li>
                     ))}
                 </ul>
             )}
-            <hr></hr>
-            {TotalPrice !== 0 ?
+            {/* <hr></hr> */}
+
+            {
+                TotalPrice !== 0 ?
                 <div className={`${styles.CartTotal}`}>
                     <span>Total</span>
                     <span>${TotalPrice}</span>
                 </div> : null
+            }
+
+            {TotalPrice !== 0 ?
+                <div className={`${styles.CartTotal}`}>
+                    <button className={`${styles.CartCoupon}`}>
+                        <span><img src={coupon} alt="couponImage" className={`${styles.couponImage}`}></img>Have a coupon code?</span>
+                    </button>
+                </div> : null
                 }
+
+            {TotalPrice !== 0 ?
+                <div className={`${styles.CartTotal}`}>
+                    <button className={`${styles.CartCheckout}`}>
+                        checkout
+                    </button>
+                </div> : null
+                }
+
         </div>
     );
 };

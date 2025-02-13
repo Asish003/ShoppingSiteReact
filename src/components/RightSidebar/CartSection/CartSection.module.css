@@ -4,6 +4,8 @@
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
+    flex-direction: column;
+    padding-bottom: 20px;
 }
 
 /* h2 {
@@ -57,14 +59,35 @@
 }
 
 .ItemPrice {
-    color: #007bff;
+    font-weight: bold;
+} 
+
+.ItemPrice span{
+    color: gold;
+    font-weight: bold;
 }
 
+.CartItemsQuantity{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
 .RemoveButton {
     background: none;
     border: none;
     color: red;
-    font-size: 18px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    padding-bottom: 5px;
+}
+
+.AddButton{
+    background: none;
+    border: none;
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
     cursor: pointer;
 }
 
@@ -72,14 +95,44 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    font-weight: bold;
 }
 
 hr {
     margin-top: 20px;
     height: 1px;
     background: rgb(179, 178, 178);
-    background: rgb(179, 178, 178);
     font-size: 0;
     border: 0;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.CartCoupon{
+    display: flex;  
+    flex-direction: row;
+    background-color: rgb(179, 178, 178);
+    border: none;
+    border-radius: 15px;
+    align-items: center;
+    font-size: 16px;
+    margin: 20px;
+    padding: 10px;
+}
+
+.CartCoupon span{
+    display: flex;
+    justify-content: space-around;
+}
+
+.CartCheckout{
+    display: flex;  
+    flex-direction: row;
+    background-color: rgb(241, 183, 35);
+    border: none;
+    border-radius: 15px;
+    align-items: center;
+    font-size: 16px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px;
 }
