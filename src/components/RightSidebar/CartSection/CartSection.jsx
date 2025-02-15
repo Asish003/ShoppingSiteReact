@@ -13,8 +13,8 @@ const CartSection = ({ cartItems, removeItem , addToCart }) => {
             TotalPrice += item.price * item.quantity
         });
 
-        // setTotalPrice(TotalPrice.toFixed(2));
-        setTotalPrice(TotalPrice)
+        setTotalPrice(Math.round(TotalPrice));
+        // setTotalPrice(TotalPrice)
     },[cartItems]);
     
     return (
